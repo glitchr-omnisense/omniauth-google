@@ -50,6 +50,9 @@ or a long-running worker serving several), and the exchange repeats that address
   same at the exchange**; the factory; the former names; in plain PHP (`BareTest`), nothing loaded
   but omniauth, league, Guzzle, the PSR interfaces and the password hasher (a generic league
   provider through `LeagueProvider` is the core's own test now).
+- omniauth's provider conformance suite (`Tests/GoogleContractTest.php`,
+  `Omniauth\Testing\ProviderContractTests`): green on 2026-10-25 on the same recorded answers -
+  the address, a return path, the exchange, a refused code, a 503, the factory; no defect found.
 - Not verified: **a real Google** - no client id and secret were at hand: the recorded answers are
   written from Google's documentation, not captured, and the ID token's signature is not checked
   (a token from the token endpoint over TLS, OpenID Connect Core §3.1.3.7 (6)).
