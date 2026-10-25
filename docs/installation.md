@@ -1,9 +1,9 @@
 ---
 title: Installation
-order: 1
+order: 10
 ---
 
-# Installation, in plain PHP
+## Installation
 
 ```sh
 composer require omniscient/omniauth omniauth/google
@@ -61,4 +61,10 @@ The return route hands its query to `verify()`; what follows (`Authenticated`,
 `SecondFactorRequired`, `IdentityUnknown`, a failure) is omniauth's, described in its
 [identity providers page](https://github.com/glitchr-studio/omniauth/blob/1.x/docs/oauth.md).
 
-Next: [Google](google.md).
+Run in omniauth's harness on 2026-10-25, it prints:
+
+```
+accounts.google.com openid email profile -> https://example.org/login/google/callback
+```
+
+Building the provider and the address calls nothing; Google is reached at the exchange only.

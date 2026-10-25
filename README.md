@@ -35,8 +35,9 @@ or a long-running worker serving several), and the exchange repeats that address
 
 ## Documentation
 
+- [Overview](docs/index.md): endpoints, credentials, options, capabilities, an example on recorded answers, errors
 - [Installation, in plain PHP](docs/installation.md)
-- [Google](docs/google.md)
+- [Behaviour](docs/google.md): the ID token's checks, the return address, by configuration, any league provider
 
 ## Verified, and not
 

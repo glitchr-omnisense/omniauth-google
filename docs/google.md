@@ -1,9 +1,9 @@
 ---
-title: Google
-order: 2
+title: Behaviour
+order: 30
 ---
 
-# Google
+## Behaviour
 
 ```php
 new GoogleProvider(
@@ -30,7 +30,7 @@ token's.
 `email_verified` decides whether an address may link an account: `true` (or the string `"true"`
 Google once sent) only.
 
-## The return address
+### The return address
 
 An absolute address is sent as it is. A **path** is completed by the origin of the request that
 began the trip (`Context::$origin`, kept in the attempt with the state): a site served on two hosts
@@ -38,14 +38,14 @@ began the trip (`Context::$origin`, kept in the attempt with the state): a site 
 visitor back to the host they left from, and the exchange repeats that trip's address, as Google
 requires. Each address must be one of the client's authorized redirect URIs at Google.
 
-## By configuration
+### By configuration
 
 `GoogleFactory` makes Google for omniauth's `Providers::configured()`: an entry named
 `google`, or of `type: google` (`client_id`, `client_secret`, `redirect_uri`, `scopes`,
 `hosted_domain`). An entry without a `client_id` is not served. Its constructor takes a clock and
 league's collaborators (an `httpClient`: tests, proxies).
 
-## Any league provider
+### Any league provider
 
 omniauth's `Omniauth\OAuth\Provider\LeagueProvider` - GoogleProvider's ground - serves any league/oauth2-client provider by hand
 (omniauth's state and PKCE in the address, the code exchanged with the verifier, the person read
@@ -53,7 +53,7 @@ from the resource owner's details, their keys named by `fields`), until that pro
 package. Leave the league provider's own `pkceMethod` unset: omniauth draws the verifier and keeps
 it in the attempt (a league provider that draws its own is refused).
 
-## Formerly
+### Formerly
 
 `GoogleProvider` was `Omniauth\OAuth\Provider\GoogleProvider` in omniauth/oauth: the former name
 stays an alias for one release (in omniauth now), and `Providers::fromConfig()` (deprecated) makes
