@@ -1,6 +1,6 @@
 # omniauth/google
 
-Google sign-in for [omniscient/omniauth](https://github.com/glitchr-studio/omniauth), under any PHP
+Google sign-in for [omnisense/omniauth](https://github.com/glitchr-omnisense/omniauth), under any PHP
 host: Google as an OpenID Connect provider of omniauth's identity providers (`Omniauth\OAuth\`,
 which carries what every provider shares - the state, PKCE and the nonce kept in the attempt, the
 linking by `sub`, the sign-up of an unknown identity, the second factor after it). It is built on
@@ -17,10 +17,10 @@ There is no sandbox option: the same endpoints serve every client.
 ## Installation
 
 ```sh
-composer require omniscient/omniauth omniauth/google
+composer require omnisense/omniauth omniauth/google
 ```
 
-Requires PHP 8.2, `omniscient/omniauth` (1.x), `league/oauth2-client` (^2.7), `league/oauth2-google`
+Requires PHP 8.2, `omnisense/omniauth` (1.x), `league/oauth2-client` (^2.7), `league/oauth2-google`
 (^4.0, Guzzle through it) and `psr/clock`. Under omnibridge/symfony its factory is registered as
 soon as the package is installed (`omniauth.oauth.factory.google`); under omnibridge/laravel the
 providers are made through it too.

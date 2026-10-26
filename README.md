@@ -1,6 +1,6 @@
 # omniauth/google
 
-Google sign-in for [omniscient/omniauth](https://github.com/glitchr-studio/omniauth), **under any
+Google sign-in for [omnisense/omniauth](https://github.com/glitchr-omnisense/omniauth), **under any
 PHP host**, over league/oauth2-google: Google as an OpenID Connect provider of omniauth's
 identity providers (`Omniauth\OAuth\`, in the core since 2026-10-23 - formerly omniauth/oauth),
 which carry what every provider shares (the state, PKCE and the nonce kept in the attempt, the linking by `sub`, the
