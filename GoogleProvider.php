@@ -9,6 +9,8 @@ use Omniauth\OAuth\Exception\ProviderError;
 use Omniauth\OAuth\Identity;
 use Omniauth\OAuth\Provider\LeagueProvider;
 use Omniauth\SystemClock;
+use Omnisense\Contracts\Policy\DeclaresUsagePolicyInterface;
+use Omnisense\Contracts\Policy\UsagePolicy;
 use Psr\Clock\ClockInterface;
 
 /**
@@ -25,15 +27,25 @@ use Psr\Clock\ClockInterface;
  *
  * "email_verified" is what says whether an account may be linked by its
  * address (QA3): a JSON boolean, or the string "true" Google once sent.
+ *
+ * Its usage policy (policy.json, usagePolicy()) says what Google's terms ask:
+ * no published limit, user data for the features users see, the button's
+ * branding. It is data for the site (a credits or policies page, the
+ * omnisense-policies export); no sign-in is counted against it.
  */
-final class GoogleProvider extends LeagueProvider
+final class GoogleProvider extends LeagueProvider implements DeclaresUsagePolicyInterface
 {
+    /** Google's terms as data, in omnisense/contracts' schema. */
+    public const POLICY = __DIR__.'/policy.json';
+
     public const SCOPES = ['openid', 'email', 'profile'];
     public const ISSUERS = ['https://accounts.google.com', 'accounts.google.com'];
     /** Seconds of clock difference tolerated on exp and iat. */
     public const LEEWAY = 60;
 
     private readonly ClockInterface $clock;
+
+    private static ?UsagePolicy $policy = null;
 
     /**
      * @param string       $redirectUri  the return address (https://…/login/google/callback), or its path
@@ -60,6 +72,11 @@ final class GoogleProvider extends LeagueProvider
             ['subject' => 'sub', 'email' => 'email', 'verified' => 'email_verified', 'name' => 'name'],
             $redirectUri,
         );
+    }
+
+    public function usagePolicy(): UsagePolicy
+    {
+        return self::$policy ??= UsagePolicy::fromFile(self::POLICY);
     }
 
     protected function authorizationOptions(Authorization $authorization): array

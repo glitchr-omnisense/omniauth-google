@@ -9,7 +9,7 @@ parameters:
     paths:
         - .
     excludePaths:
-        - vendor
+        - vendor (?)
         # LeagueProvider's former name here, an alias of the core's for one release.
         - LeagueProvider.php
     reportUnmatchedIgnoredErrors: false

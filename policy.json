@@ -1,0 +1,38 @@
+{
+    "$schema": "https://github.com/glitchr-omnisense/contracts/blob/1.x/resources/usage-policy.schema.json",
+    "provider": "google",
+    "rateLimits": null,
+    "concurrency": null,
+    "rights": {
+        "commercial": "allowed",
+        "openSourceRequired": false,
+        "caching": {
+            "permission": "unknown",
+            "maxTtl": null
+        },
+        "storage": "contract",
+        "redistribution": "forbidden",
+        "attribution": {
+            "required": false,
+            "text": null,
+            "url": null,
+            "where": []
+        },
+        "licence": null
+    },
+    "requirements": {
+        "key": true,
+        "userAgent": {
+            "required": false,
+            "pattern": null
+        }
+    },
+    "provenance": {
+        "terms": "https://developers.google.com/terms",
+        "policy": "https://developers.google.com/terms/api-services-user-data-policy",
+        "verifiedAt": "2026-11-10",
+        "declaredBy": "maintainer",
+        "contact": null,
+        "notes": "Sign in with Google (OpenID Connect: the authorization address, the token endpoint, the userinfo), under the Google APIs Terms of Service (last modified 2021-11-09) and the Google API Services User Data Policy (last updated 2024-02-15). Limits: Google publishes no request figure for its OAuth and OpenID Connect endpoints, so they are unknown (null); the terms say Google sets and enforces limits and forbid circumventing them (section 2(d)). Omniauth guards no sign-in with a usage limit: one counted for the whole application would let anyone who exhausts it refuse every user's sign-in; a refused exchange (a 429 included) is a ProviderError and the sign-in is refused, never bypassed. Rights: commercial use is not restricted by the terms (no such clause; disruptive commercial messages and unlawful gambling are forbidden, 4(a)(5)); user data only to provide or improve user-facing features, never transferred or sold (User Data Policy: storage 'contract', redistribution 'forbidden'); content kept no longer than its cache headers allow (5(e)), no retention period beyond. A privacy policy that documents the use of the user data is required, its URL in the OAuth client's configuration. Branding: the button follows the Sign in with Google branding guidelines (https://developers.google.com/identity/branding-guidelines: 'Sign in with Google', 'Sign up with Google' or 'Continue with Google', the standard 'G' logo unchanged) - a display requirement, not a credit, hence no attribution. An External app in production that shows a logo or a name on the consent screen needs brand verification (https://developers.google.com/identity/protocols/oauth2/production-readiness/brand-verification); an unverified app has a user cap (no figure given there). The key is the OAuth client (client_id and client_secret)."
+    }
+}

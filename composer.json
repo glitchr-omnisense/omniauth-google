@@ -15,6 +15,7 @@
         "php": ">=8.2",
         "league/oauth2-client": "^2.7",
         "league/oauth2-google": "^4.0",
+        "omnisense/contracts": "^1.0@dev",
         "omnisense/omniauth": "^1.0@dev",
         "psr/clock": "^1.0"
     },
@@ -35,6 +36,9 @@
         }
     },
     "extra": {
+        "omnisense": {
+            "policy": "policy.json"
+        },
         "branch-alias": {
             "dev-1.x": "1.x-dev"
         }
