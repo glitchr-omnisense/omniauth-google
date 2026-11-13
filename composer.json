@@ -15,8 +15,8 @@
         "php": ">=8.2",
         "league/oauth2-client": "^2.7",
         "league/oauth2-google": "^4.0",
-        "omnisense/contracts": "^1.0@dev",
-        "omnisense/omniauth": "^1.0@dev",
+        "omnisense/contracts": "^1.0",
+        "omnisense/omniauth": "^1.0",
         "psr/clock": "^1.0"
     },
     "require-dev": {

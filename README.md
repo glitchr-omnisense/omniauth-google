@@ -6,6 +6,14 @@ identity providers (`Omniauth\OAuth\`, in the core since 2026-10-23 - formerly o
 which carry what every provider shares (the state, PKCE and the nonce kept in the attempt, the linking by `sub`, the
 sign-up of an unknown identity, the second factor after it).
 
+```sh
+composer require omnisense/omniauth omniauth/google
+```
+
+It needs an OAuth client of your own, made in Google Cloud's console (a client id and a client
+secret, the return address registered there); its tests and the example on recorded answers in
+[docs/index.md](docs/index.md) need none.
+
 ```php
 use Omniauth\Google\GoogleFactory;
 use Omniauth\OAuth\{NoSecondFactorLinking, OAuthMethod};
